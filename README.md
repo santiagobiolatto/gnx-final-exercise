@@ -1,4 +1,4 @@
-#Infromacion del ejercicio
+# Infromacion del ejercicio
 
 El ejercicio todavia esta incompleto, pero queria entregar por lo menos lo que pude terminar de hacer por ahora,
 en la semana tengo pensado terminar las siguientes funcionalidades aun no implementadas:
