@@ -29,6 +29,7 @@ class CantUpdateOrCreateEmployeeWithSameDniError extends GNXError {
 
 const CantBeLessThanEighteen = {
   validate: async function (typeName, originalObject, materializedObject) {
+    console.log(originalObject.birth_date);
     const birthDate =  materializedObject.birth_date;
     calculateAge = (birthDate) => {
       let now = new Date();

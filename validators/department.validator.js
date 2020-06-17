@@ -23,25 +23,29 @@ class CantUpdateOrCreateDepartmentWithSameNameError extends GNXError {
       "CantUpdateOrCreateDepartmentWithSameNameError"
     );
   }
-};
+}
 
 const CantDeleteDepartmentsWithChildrens = {
-    validate: async function (typeName, originalObject, materializedObject) {
-      const deptEmployeeFinded = await Dept_employee.findOne({ deptId: originalObject });
-      const deptManagerFinded = await Dept_manager.findOne({ deptId: originalObject });
-      if ( deptManagerFinded || deptEmployeeFinded) {
-        throw new CantDeleteDepartmentWithChildrensError(typeName);
-      }
-    },
-  };
-  class CantDeleteDepartmentWithChildrensError extends GNXError {
-    constructor(typeName) {
-      super(
-        typeName,
-        "Department have dept_employee or dept_manager related",
-        "CantDeleteDepartmentsWithChildrens"
-      );
+  validate: async function (typeName, originalObject, materializedObject) {
+    const deptEmployeeFinded = await Dept_employee.findOne({
+      deptId: originalObject,
+    });
+    const deptManagerFinded = await Dept_manager.findOne({
+      deptId: originalObject,
+    });
+    if (deptManagerFinded || deptEmployeeFinded) {
+      throw new CantDeleteDepartmentWithChildrensError(typeName);
     }
+  },
+};
+class CantDeleteDepartmentWithChildrensError extends GNXError {
+  constructor(typeName) {
+    super(
+      typeName,
+      "Department have dept_employee or dept_manager related",
+      "CantDeleteDepartmentsWithChildrens"
+    );
   }
+}
 
-module.exports = { CantRepeatDeptName, CantDeleteDepartmentsWithChildrens};
+module.exports = { CantRepeatDeptName, CantDeleteDepartmentsWithChildrens };

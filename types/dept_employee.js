@@ -3,6 +3,7 @@ const gnx = require('@simtlix/gnx');
 const {GraphQLID, GraphQLObjectType} = graphql;
 const {GraphQLDate} = require('graphql-iso-date');
 const {ToDateCantBeSmallerThanFromDate} = require('../validators/date.validator');
+const {CantBeTwoEmployeeInTheSameDeptAtTheSameTime} = require('../validators/dept_employee.validator');
 
 const Dept_employee = require('../models/dept_employee').Dept_employee;
 const Employee = require('../models/employee').Employee;
@@ -15,9 +16,11 @@ const Dept_employeeType = new GraphQLObjectType({
         validations: {
             'CREATE':[
                 ToDateCantBeSmallerThanFromDate,
+                CantBeTwoEmployeeInTheSameDeptAtTheSameTime,
             ],
             'UPDATE':[
                 ToDateCantBeSmallerThanFromDate,
+                CantBeTwoEmployeeInTheSameDeptAtTheSameTime,
             ],
             'DELETE':[
 

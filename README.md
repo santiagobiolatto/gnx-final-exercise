@@ -1,11 +1,7 @@
 # Infromacion del ejercicio
 
-El ejercicio todavia esta incompleto, pero queria entregar por lo menos lo que pude terminar de hacer por ahora,
-en la semana tengo pensado terminar las siguientes funcionalidades aun no implementadas:
-
+Faltaria realizar la siguiente restriccion, es un poco confusa y no pude realizarla:
 - The same employee cannot have 2 titles with the same dept_name
-- Can't be 2 employees assigned to the same department in the same portion of time
-- Can't be 2 managers assigned to the same department in the same portion of time
 
 To run this app:
 # Install

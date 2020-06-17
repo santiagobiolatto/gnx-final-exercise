@@ -20,7 +20,7 @@ const DepartmentType = new GraphQLObjectType({
             ]
         },
     },
-    fields: () =>({
+    fields: () => ({
         id:{type:GraphQLID},
         dept_name:{type:GraphQLString}
     }),
